@@ -1,0 +1,29 @@
+# Local, machine-specific instructions (never commit)
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Environment (document variables in .env.example instead)
+.env
+.env.*
+!.env.example
+
+# Test and coverage output
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editors and OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
