@@ -22,20 +22,21 @@ see a purchase requisition move through an approval workflow using a UI that was
 generated from a schema, not hand-coded per-object.
 
 ### V1-01: Project scaffolding
-- **Status:** [~]
-- **Completed:**
+- **Status:** [x]
+- **Completed:** 2026-11-22
 - **Size:** M
 - **Depends on:** none
 - **Description:** Set up the repo, backend and frontend skeletons, folder
   structure, and core dependencies, using the stack chosen in this story's
   design proposal.
 - **Acceptance criteria:**
-  - [ ] Backend starts with a health-check route returning 200
-  - [ ] Frontend starts and renders a placeholder page
-  - [ ] Repo has a README stub and .gitignore
-  - [ ] Architecture decision records are set up, with the decisions made so
+  - [x] Backend starts with a health-check route returning 200
+  - [x] Frontend starts and renders a placeholder page
+  - [x] Repo has a README stub and .gitignore
+  - [x] Architecture decision records are set up, with the decisions made so
     far recorded
-- **Notes:**
+- **Notes:** TypeScript monorepo (Fastify API, React and Vite web app, Vitest)
+  runs with `npm run dev`; ADRs 0001–0008 recorded.
 
 ### V1-02: CI and code quality
 - **Status:** [ ]
@@ -521,9 +522,9 @@ bottom; stop at any point and the demo is still coherent.
 
 ## Progress tracking
 
-_Last updated: 2026-11-21_
+_Last updated: 2026-11-22_
 
 | Epic | Total stories | Done | Remaining | Remaining by size |
 |---|---|---|---|---|
-| V1 | 21 | 0 | 21 | 2 S · 14 M · 5 L |
+| V1 | 21 | 1 | 20 | 2 S · 13 M · 5 L |
 | V2 | 13 | 0 | 13 | 1 S · 8 M · 4 L |
