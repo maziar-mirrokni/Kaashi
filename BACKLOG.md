@@ -39,7 +39,7 @@ generated from a schema, not hand-coded per-object.
   runs with `npm run dev`; ADRs 0001–0008 recorded.
 
 ### V1-02: CI and code quality
-- **Status:** [ ]
+- **Status:** [~]
 - **Completed:**
 - **Size:** S
 - **Depends on:** V1-01
