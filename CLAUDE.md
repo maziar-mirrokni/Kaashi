@@ -72,6 +72,22 @@ When the owner types this word on its own:
 
 ## Commands
 
-To be filled in by V1-01 (Project scaffolding), once the stack is chosen. Keep
-this section up to date as commands are added: how to install, run in
-development, test, lint, and build.
+Keep this section up to date as commands are added. Run all commands from the
+repo root. Requires Node 22.13 or later (see `.nvmrc`).
+
+| Task | Command |
+|---|---|
+| Install dependencies | `npm install` |
+| Run in development (backend on port 3000, frontend on port 5173) | `npm run dev` |
+| Run all tests | `npm test` |
+| Run tests in watch mode | `npm run test:watch` |
+| Run one workspace's tests | `npx vitest run --project server` (or `web`) |
+| Type-check all workspaces | `npm run typecheck` |
+| Build all workspaces | `npm run build` |
+| Start the built backend | `npm start` |
+| Lint and format | not set up yet (V1-02) |
+
+Layout: `apps/server` (Fastify API), `apps/web` (React and Vite),
+`packages/shared` (code shared by both), `docs/adr` (decision records).
+Configuration comes from environment variables, optionally in a repo-root
+`.env`; see `.env.example`.

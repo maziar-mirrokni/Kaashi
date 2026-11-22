@@ -1,0 +1,13 @@
+{
+  "name": "@kaashi/shared",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Code shared by the Kaashi server and web app (schema types and validation, from V1-03)",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  }
+}
