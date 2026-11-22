@@ -67,3 +67,7 @@ once continuous deployment is set up.
 
 Architecture decisions are recorded in [docs/adr/](docs/adr/) in the
 [MADR](https://adr.github.io/madr/) format.
+
+## License
+
+[MIT](LICENSE)
