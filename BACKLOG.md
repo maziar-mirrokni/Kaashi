@@ -39,18 +39,20 @@ generated from a schema, not hand-coded per-object.
   runs with `npm run dev`; ADRs 0001–0008 recorded.
 
 ### V1-02: CI and code quality
-- **Status:** [ ]
-- **Completed:**
+- **Status:** [x]
+- **Completed:** 2026-11-22
 - **Size:** S
 - **Depends on:** V1-01
 - **Description:** Run linting, formatting checks, type-checking, tests, and the
   build automatically on every push and pull request.
 - **Acceptance criteria:**
-  - [ ] CI runs on every push and pull request and fails on any error
-  - [ ] Linting and formatting rules are enforced
-  - [ ] README shows a build status badge
-  - [ ] Branch protection on main requires a pull request and passing CI
-- **Notes:**
+  - [x] CI runs on every push and pull request and fails on any error
+  - [x] Linting and formatting rules are enforced
+  - [x] README shows a build status badge
+  - [x] Branch protection on main requires a pull request and passing CI
+- **Notes:** GitHub Actions CI with Biome lint and format checks; `main`
+  protected by a ruleset (pull request, passing CI, squash only); ADRs
+  0009–0015 recorded.
 
 ### V1-03: Schema format and loader
 - **Status:** [ ]
@@ -526,5 +528,5 @@ _Last updated: 2026-11-22_
 
 | Epic | Total stories | Done | Remaining | Remaining by size |
 |---|---|---|---|---|
-| V1 | 21 | 1 | 20 | 2 S · 13 M · 5 L |
+| V1 | 21 | 2 | 19 | 1 S · 13 M · 5 L |
 | V2 | 13 | 0 | 13 | 1 S · 8 M · 4 L |

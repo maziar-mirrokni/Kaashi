@@ -1,5 +1,7 @@
 # Kaashi
 
+[![CI](https://github.com/maziar-mirrokni/Kaashi/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/maziar-mirrokni/Kaashi/actions/workflows/ci.yml?query=branch%3Amain)
+
 Kaashi is a schema-driven low-code platform. You describe your business
 objects (their fields, types, relationships and workflow) and Kaashi generates
 the API, the forms and the list views from that description, with no
@@ -43,6 +45,9 @@ Configuration is optional. To change the defaults, copy `.env.example` to
 | Task | Command |
 |---|---|
 | Run the tests | `npm test` |
+| Lint | `npm run lint` |
+| Format the code | `npm run format` |
+| Run every check CI runs | `npm run check` |
 | Type-check | `npm run typecheck` |
 | Build | `npm run build` |
 | Start the built backend | `npm start` |
