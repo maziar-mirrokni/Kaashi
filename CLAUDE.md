@@ -85,7 +85,15 @@ repo root. Requires Node 22.13 or later (see `.nvmrc`).
 | Type-check all workspaces | `npm run typecheck` |
 | Build all workspaces | `npm run build` |
 | Start the built backend | `npm start` |
-| Lint and format | not set up yet (V1-02) |
+| Lint (Biome rules and import order) | `npm run lint` |
+| Check formatting | `npm run format:check` |
+| Format and apply safe lint fixes | `npm run format` |
+| Run everything CI runs | `npm run check` |
+
+CI (`.github/workflows/ci.yml`) runs the format check, lint, type check, tests
+and build on every push and pull request. `main` is protected: changes arrive
+only through squash-merged pull requests with a passing **CI** check. Run
+`npm run check` before pushing. Biome does not format Markdown files.
 
 Layout: `apps/server` (Fastify API), `apps/web` (React and Vite),
 `packages/shared` (code shared by both), `docs/adr` (decision records).
