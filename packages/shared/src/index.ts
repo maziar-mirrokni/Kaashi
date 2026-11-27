@@ -10,7 +10,7 @@ export {
   type ObjectSchema,
   RESERVED_FIELD_NAMES,
 } from './schema/format.js';
-export { labelFromName, pluralize } from './schema/labels.js';
+export { labelFromName } from './schema/labels.js';
 export {
   formatPath,
   type SchemaIssue,

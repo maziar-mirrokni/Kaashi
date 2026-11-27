@@ -7,7 +7,7 @@ import {
   type ObjectSchema,
   RESERVED_FIELD_NAMES,
 } from './format.js';
-import { labelFromName, pluralize } from './labels.js';
+import { labelFromName } from './labels.js';
 
 /** One problem found in a schema, located by its path in the document. */
 export interface SchemaIssue {
@@ -105,7 +105,6 @@ const objectSchema = z.strictObject(
     }),
     name: nameSchema,
     label: labelSchema.optional(),
-    pluralLabel: labelSchema.optional(),
     fields: z
       .array(fieldSchema, { error: typeError('an array of fields') })
       .min(1, { error: 'must contain at least one field' }),
@@ -170,15 +169,7 @@ export function formatPath(path: readonly PropertyKey[]): string {
 }
 
 // Issues are listed in the order properties appear in a schema document.
-const PROPERTY_ORDER = [
-  'formatVersion',
-  'name',
-  'label',
-  'pluralLabel',
-  'type',
-  'required',
-  'fields',
-];
+const PROPERTY_ORDER = ['formatVersion', 'name', 'label', 'type', 'required', 'fields'];
 
 function segmentRank(segment: PropertyKey): number {
   const rank = PROPERTY_ORDER.indexOf(String(segment));
@@ -222,15 +213,13 @@ export function validateObjectSchema(data: unknown): ValidationResult {
   }
 
   const input = parsed.data;
-  const label = input.label ?? labelFromName(input.name);
 
   return {
     ok: true,
     schema: {
       formatVersion: input.formatVersion,
       name: input.name,
-      label,
-      pluralLabel: input.pluralLabel ?? pluralize(label),
+      label: input.label ?? labelFromName(input.name),
       fields: input.fields.map((field) => ({
         name: field.name,
         label: field.label ?? labelFromName(field.name),

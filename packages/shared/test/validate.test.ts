@@ -30,7 +30,6 @@ describe('validateObjectSchema: valid schemas', () => {
         formatVersion: 1,
         name: 'purchase_category',
         label: 'Purchase category',
-        pluralLabel: 'Purchase categories',
         fields: [{ name: 'contact_email', label: 'Contact email', type: 'text', required: false }],
       },
     });
@@ -41,13 +40,11 @@ describe('validateObjectSchema: valid schemas', () => {
       formatVersion: 1,
       name: 'person',
       label: 'Person',
-      pluralLabel: 'People',
       fields: [{ name: 'name', label: 'Full name', type: 'text', required: true }],
     });
 
     expect(result.ok && result.schema).toMatchObject({
       label: 'Person',
-      pluralLabel: 'People',
       fields: [{ name: 'name', label: 'Full name', type: 'text', required: true }],
     });
   });
@@ -75,7 +72,6 @@ describe('validateObjectSchema: valid schemas', () => {
     const result = validateObjectSchema({ ...validSchema(), label: '  Supplier  ' });
 
     expect(result.ok && result.schema.label).toBe('Supplier');
-    expect(result.ok && result.schema.pluralLabel).toBe('Suppliers');
   });
 
   it('accepts a name of exactly 63 characters', () => {
@@ -132,9 +128,8 @@ describe('validateObjectSchema: invalid schemas', () => {
   });
 
   it('rejects empty labels', () => {
-    expect(issuesOf({ ...validSchema(), label: '', pluralLabel: '   ' })).toEqual([
+    expect(issuesOf({ ...validSchema(), label: '   ' })).toEqual([
       { path: 'label', message: 'must not be empty' },
-      { path: 'pluralLabel', message: 'must not be empty' },
     ]);
   });
 

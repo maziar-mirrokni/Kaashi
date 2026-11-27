@@ -47,7 +47,6 @@ describe('loadObjectSchema', () => {
       formatVersion: 1,
       name: 'vendor',
       label: 'Vendor',
-      pluralLabel: 'Vendors',
       fields: [
         { name: 'name', label: 'Name', type: 'text', required: true },
         { name: 'contact_email', label: 'Contact email', type: 'text', required: false },

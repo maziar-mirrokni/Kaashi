@@ -34,6 +34,5 @@ export interface ObjectSchema {
   formatVersion: typeof FORMAT_VERSION;
   name: string;
   label: string;
-  pluralLabel: string;
   fields: FieldSchema[];
 }

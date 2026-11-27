@@ -21,7 +21,6 @@ This document specifies **format version 1**.
   "formatVersion": 1,
   "name": "vendor",
   "label": "Vendor",
-  "pluralLabel": "Vendors",
   "fields": [
     { "name": "name", "label": "Name", "type": "text", "required": true },
     { "name": "contact_email", "label": "Contact email", "type": "text" },
@@ -40,8 +39,7 @@ This is the example schema in [`schemas/vendor.json`](../schemas/vendor.json).
 |---|---|---|---|
 | `formatVersion` | Yes | number | The schema format version. Must be `1`. |
 | `name` | Yes | string | The object's name, used by the API and the database. See [Names](#names). |
-| `label` | No | string | The name shown in the UI for one record, such as "Vendor". Defaults to a label derived from `name`. |
-| `pluralLabel` | No | string | The name shown in the UI for several records, such as "Vendors". Defaults to the plural of `label`. |
+| `label` | No | string | The name shown in the UI, such as "Vendor". Defaults to a label derived from `name`. |
 | `fields` | Yes | array | The object's fields, in the order the UI shows them. At least one field. |
 
 ## Field properties
@@ -86,11 +84,6 @@ platform adds these fields to every object itself.
 Labels are what the UI shows. When a label is missing it is derived from the
 name: underscores become spaces and the first letter is capitalised, so
 `contact_email` becomes "Contact email".
-
-A missing `pluralLabel` is derived from `label` with simple English rules:
-"Vendor" becomes "Vendors", "Category" becomes "Categories" and "Address"
-becomes "Addresses". Set `pluralLabel` explicitly for irregular plurals, such
-as "Person" and "People".
 
 Labels may contain any text but must not be empty. Leading and trailing spaces
 are removed.

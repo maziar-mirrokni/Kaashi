@@ -32,8 +32,8 @@ Chosen option: "Fields as an ordered array; strict, lowercase names; optional
 labels; a format version", because it makes field order explicit and keeps
 names safe for every database and file system.
 
-* An object has `formatVersion` (must be `1`), `name`, optional `label` and
-  `pluralLabel`, and `fields` (at least one).
+* An object has `formatVersion` (must be `1`), `name`, optional `label`, and
+  `fields` (at least one).
 * A field has `name`, optional `label`, `type`, and optional `required`
   (default `false`).
 * Object and field names match `^[a-z][a-z0-9_]*$` and are at most 63
@@ -42,8 +42,7 @@ names safe for every database and file system.
 * Field names are unique within an object. `id`, `created_at` and `updated_at`
   are reserved for fields the platform adds itself.
 * Labels are what the UI shows. Missing labels are derived from names
-  (`contact_email` becomes "Contact email"); a missing `pluralLabel` is
-  derived with simple English plural rules.
+  (`contact_email` becomes "Contact email").
 * Unknown properties are rejected.
 * `formatVersion` changes only for breaking changes; additions keep version 1.
 
@@ -73,3 +72,8 @@ names safe for every database and file system.
 Decided in the V1-03 design proposal, decision D2. Specified in
 [docs/schema-format.md](../schema-format.md). Requiring at least one field and
 trimming labels were implementer's choices made during V1-03.
+
+The approved proposal also had an optional `pluralLabel` (the UI name for
+several records, derived from `label` with English plural rules). The owner
+removed it while reviewing V1-03 as premature: nothing used it yet. It can be
+added when the generated UI needs it, without changing `formatVersion`.
