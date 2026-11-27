@@ -22,3 +22,11 @@ supersedes the old one.
 | [0013](0013-protect-main-with-a-ruleset.md) | Protect main with a branch ruleset and squash-only merging | Accepted | V1-02 |
 | [0014](0014-local-checks-with-npm-scripts.md) | Run checks locally with npm scripts and editor support, without git hooks | Accepted | V1-02 |
 | [0015](0015-show-ci-status-badge-in-readme.md) | Show the CI status badge in the README | Accepted | V1-02 |
+| [0016](0016-one-schema-file-per-object.md) | Define each object in its own schema file | Accepted | V1-03 |
+| [0017](0017-object-and-field-schema-shape.md) | Shape of object and field schemas | Accepted | V1-03 |
+| [0018](0018-initial-field-types.md) | Start with four field types and add more when stories need them | Accepted | V1-03 |
+| [0019](0019-use-zod-to-validate-schemas.md) | Use Zod to validate the schema format | Accepted | V1-03 |
+| [0020](0020-schema-code-location.md) | Put schema validation in the shared package and file loading in the server | Accepted | V1-03 |
+| [0021](0021-compile-shared-package-with-source-condition.md) | Compile the shared package, and use its source in development | Accepted | V1-03 |
+| [0022](0022-report-every-schema-problem.md) | Report every schema problem at once, with its location | Accepted | V1-03 |
+| [0023](0023-document-the-schema-format.md) | Document the schema format in a spec file, and defer a published JSON Schema | Accepted | V1-03 |
