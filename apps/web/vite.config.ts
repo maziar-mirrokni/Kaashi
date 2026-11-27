@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url';
 import react from '@vitejs/plugin-react';
-import { loadEnv } from 'vite';
+import { defaultClientConditions, loadEnv } from 'vite';
 import { defineConfig } from 'vitest/config';
 
 const repoRoot = fileURLToPath(new URL('../..', import.meta.url));
@@ -12,6 +12,8 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+    // Resolve @kaashi/shared to its TypeScript source, not its build output.
+    resolve: { conditions: ['@kaashi/source', ...defaultClientConditions] },
     server: {
       port: 5173,
       strictPort: true,

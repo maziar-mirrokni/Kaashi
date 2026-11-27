@@ -4,7 +4,8 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "types": ["node"],
-    "noEmit": true
+    "noEmit": true,
+    "customConditions": ["@kaashi/source"]
   },
   "include": ["src", "test", "vitest.config.ts"]
 }
