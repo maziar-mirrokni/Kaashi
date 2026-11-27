@@ -1,10 +1,9 @@
 import { defineConfig } from 'vitest/config';
 
 // Runs every workspace's tests from the repo root with `npm test`.
-// Each app has its own Vitest config (environment, setup files). Add
-// 'packages/*' here once a package has tests.
+// Each workspace has its own Vitest config (environment, setup files).
 export default defineConfig({
   test: {
-    projects: ['apps/*'],
+    projects: ['apps/*', 'packages/*'],
   },
 });

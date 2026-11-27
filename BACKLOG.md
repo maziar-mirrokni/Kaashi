@@ -55,18 +55,20 @@ generated from a schema, not hand-coded per-object.
   0009–0015 recorded.
 
 ### V1-03: Schema format and loader
-- **Status:** [ ]
-- **Completed:**
+- **Status:** [x]
+- **Completed:** 2026-11-26
 - **Size:** M
 - **Depends on:** V1-01
 - **Description:** Define the JSON schema shape for an object (name, fields,
   types, required flags). Write a loader that reads a schema file into memory.
 - **Acceptance criteria:**
-  - [ ] Schema format documented (in code comments or a short spec file)
-  - [ ] Loader parses one hardcoded example schema without error
-  - [ ] Invalid schema shape throws a clear error
-  - [ ] Automated tests cover valid and invalid schemas
-- **Notes:**
+  - [x] Schema format documented (in code comments or a short spec file)
+  - [x] Loader parses one hardcoded example schema without error
+  - [x] Invalid schema shape throws a clear error
+  - [x] Automated tests cover valid and invalid schemas
+- **Notes:** Schema format v1 (one JSON file per object; text, number,
+  boolean, date) specified in `docs/schema-format.md`, validated with Zod in
+  the shared package and loaded by the server; ADRs 0016–0023 recorded.
 
 ### V1-04: Dynamic API generator (in-memory)
 - **Status:** [ ]
@@ -524,9 +526,9 @@ bottom; stop at any point and the demo is still coherent.
 
 ## Progress tracking
 
-_Last updated: 2026-11-22_
+_Last updated: 2026-11-26_
 
 | Epic | Total stories | Done | Remaining | Remaining by size |
 |---|---|---|---|---|
-| V1 | 21 | 2 | 19 | 1 S · 13 M · 5 L |
+| V1 | 21 | 3 | 18 | 1 S · 12 M · 5 L |
 | V2 | 13 | 0 | 13 | 1 S · 8 M · 4 L |

@@ -2,12 +2,23 @@
   "name": "@kaashi/shared",
   "version": "0.0.0",
   "private": true,
-  "description": "Code shared by the Kaashi server and web app (schema types and validation, from V1-03)",
+  "description": "Code shared by the Kaashi server and web app: the schema format and its validation",
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "@kaashi/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   },
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit"
-  }
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "files": [
+    "dist"
+  ]
 }

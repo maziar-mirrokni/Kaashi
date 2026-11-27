@@ -1,0 +1,12 @@
+{
+  "formatVersion": 1,
+  "name": "vendor",
+  "label": "Vendor",
+  "fields": [
+    { "name": "name", "label": "Name", "type": "text", "required": true },
+    { "name": "contact_email", "label": "Contact email", "type": "text" },
+    { "name": "rating", "label": "Rating", "type": "number" },
+    { "name": "is_active", "label": "Active", "type": "boolean", "required": true },
+    { "name": "since", "label": "Vendor since", "type": "date" }
+  ]
+}

@@ -14,7 +14,9 @@ workflow from Draft to Received.
 ## Status
 
 Early development. The project skeleton runs: a backend with a health check
-and a placeholder web page. The schema-driven features come next.
+and a placeholder web page. The [object schema format](docs/schema-format.md)
+is defined and can be loaded and validated; generating the API from it comes
+next.
 
 Progress is tracked story by story in [BACKLOG.md](BACKLOG.md):
 
@@ -60,7 +62,9 @@ A one-command run that needs no local Node install is planned (V1-06).
 |---|---|
 | `apps/server` | Backend API (Fastify, TypeScript) |
 | `apps/web` | Web app (React, Vite, TypeScript) |
-| `packages/shared` | Code shared by the backend and the web app |
+| `packages/shared` | Code shared by the backend and the web app: the schema format and its validation |
+| `schemas` | Object schemas, one JSON file per object |
+| `docs/schema-format.md` | Specification of the object schema format |
 | `docs/adr` | Architecture decision records |
 
 ## Live demo

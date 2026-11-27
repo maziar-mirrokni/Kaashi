@@ -96,6 +96,15 @@ only through squash-merged pull requests with a passing **CI** check. Run
 `npm run check` before pushing. Biome does not format Markdown files.
 
 Layout: `apps/server` (Fastify API), `apps/web` (React and Vite),
-`packages/shared` (code shared by both), `docs/adr` (decision records).
+`packages/shared` (code shared by both), `schemas` (object schemas, one JSON
+file per object), `docs/schema-format.md` (the schema format spec; keep it in
+sync with `packages/shared/src/schema/`), `docs/adr` (decision records).
 Configuration comes from environment variables, optionally in a repo-root
 `.env`; see `.env.example`.
+
+`@kaashi/shared` is consumed as TypeScript source in development and tests
+(through the `@kaashi/source` export condition) and as compiled `dist/` by
+`npm start`. `npm run build` builds it before the apps. A new workspace that
+imports it needs the condition in its `tsconfig.json` (`customConditions`) and
+Vite or Vitest config (`resolve.conditions`), and `--conditions=@kaashi/source`
+when run with `tsx`.
